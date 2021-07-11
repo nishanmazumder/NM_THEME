@@ -2,7 +2,7 @@
 
 /**
  * Main template
- * @package nmTheme
+ * @package NM_THEME
  */
 ?>
 <?php get_header(); ?>

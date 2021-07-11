@@ -2,7 +2,7 @@
 
 /**
  * Header template
- * @package nmTheme
+ * @package NM_THEME
  */
 
 ?>
