@@ -5,7 +5,7 @@
  * @package NM_THEME
  */
 
-
+ include NM_DIR_PATH."/inc/classes/class-test.php";
 
 ?>
 <?php get_header(); ?>
@@ -25,7 +25,7 @@
 
                 <?php 
                 
-                $test = new Test;
+                $test = new \NM_THEME\Inc\Classes\Test;
                 
                 
                 ?>
