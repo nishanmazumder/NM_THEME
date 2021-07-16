@@ -5,7 +5,7 @@ namespace NM_THEME\Inc\Traits;
 trait Singleton{
     public function __construct(){}
 
-    public function __clone(){}
+    //public function __clone(){}
 
     final public static function get_instance(){
         static $instance = [];

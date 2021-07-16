@@ -14,7 +14,10 @@ if (!defined('NM_DIR_URI')) {
 }
 
 //Autoloader
-require_once NM_DIR_PATH. '/inc/helpers/autoloder.php';
+//require_once NM_DIR_PATH. '/inc/helpers/autoloder-bak.php';
+
+//print_r(NM_DIR_PATH);
+//print_r(NM_DIR_URI);
 
 
 
@@ -30,7 +33,7 @@ require_once NM_DIR_PATH. '/inc/helpers/autoloder.php';
 
 //NM_THEME::get_instance();
 
-\NM_THEME\Inc\Classes\NM_THEME::get_instance();
+//\NM_THEME\Inc\Classes\NM_THEME::get_instance();
 
 
 
