@@ -21,12 +21,14 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>main</h1>
-
                 <?php 
                 
-                $test = new \NM_THEME\Inc\Classes\Test;
-                $nm = new \NM_THEME\Inc\Classes\NM_THEME;
-                
+                if ( have_posts() ) : 
+                    while ( have_posts() ) : the_post(); 
+                    the_title();
+                    the_content();
+                    endwhile; 
+                endif; 
                 
                 ?>
             </div>
