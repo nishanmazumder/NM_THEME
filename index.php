@@ -5,6 +5,8 @@
  * @package NM_THEME
  */
 
+use NM_THEME\Inc\Classes\Menus;
+
 ?>
 
 <?php get_header(); ?>
@@ -23,12 +25,17 @@
                 <h1>main</h1>
                 <?php 
                 
-                if ( have_posts() ) : 
-                    while ( have_posts() ) : the_post(); 
-                    the_title();
-                    the_content();
-                    endwhile; 
-                endif; 
+                // if ( have_posts() ) : 
+                //     while ( have_posts() ) : the_post(); 
+                //     the_title();
+                //     the_content();
+                //     endwhile; 
+                // endif; 
+
+
+
+
+
                 
                 ?>
             </div>
