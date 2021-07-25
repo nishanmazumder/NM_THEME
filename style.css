@@ -12,3 +12,8 @@ License URI: LICENSE
 Text Domain: nm_theme
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
+
+.nm-img-full{
+    width: 100%;
+    height: auto;
+}

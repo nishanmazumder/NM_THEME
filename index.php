@@ -28,19 +28,17 @@
     <div class="row">
         <?php
 
-        
+
 
         if (have_posts()) :
-            while (have_posts()) : the_post(); ?>
-                <div class="col-md-4">
-                    <h1><?php the_title(); ?></h1>
-                    <?php the_excerpt(); ?>
-                    <a href="<?php the_permalink(); ?>">POST</a>
-                </div>
-        <?php endwhile;
+            while (have_posts()) : the_post();
+                get_template_part('template-parts/content/content');
+            endwhile;
         else :
-            _e('Sorry, no posts matched your criteria.', 'nm_theme');
-        endif; ?>
+            get_template_part('template-parts/content/content', 'none');
+        endif; 
+
+        ?>
 
     </div>
 </div>
