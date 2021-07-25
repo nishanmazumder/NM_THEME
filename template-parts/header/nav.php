@@ -77,7 +77,6 @@ $menu_items = wp_get_nav_menu_items($menu_id);
                         }
                     }
                     ?>
-
                 </ul>
 
             <?php  } ?>

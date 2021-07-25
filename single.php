@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Post Page
+ * Single Post Page
  * 
  * @package NM_THEME
  */
@@ -26,22 +26,31 @@
 
 <div class="container">
     <div class="row">
-        <?php
+        <div class="col-md-12">
+            <h1>Single</h1>
+            <?php
 
-        
 
-        if (have_posts()) :
-            while (have_posts()) : the_post(); ?>
-                <div class="col-md-4">
-                    <h1><?php the_title(); ?></h1>
-                    <?php the_excerpt(); ?>
+            if (have_posts()) :
+                while (have_posts()) : the_post();
+                    the_title();
+            ?>
+
                     <a href="<?php the_permalink(); ?>">POST</a>
-                </div>
-        <?php endwhile;
-        else :
-            _e('Sorry, no posts matched your criteria.', 'nm_theme');
-        endif; ?>
 
+            <?php
+                    the_content();
+
+                endwhile;
+            else :
+                _e('Sorry, no posts matched your criteria.', 'nm_theme');
+            endif;
+
+
+            ?>
+
+
+        </div>
     </div>
 </div>
 
