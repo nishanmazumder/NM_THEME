@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Site Navigation
+ * Site Header
  * 
  * @package NM_THEME
  */
@@ -18,13 +18,9 @@ $menu_items = wp_get_nav_menu_items($menu_id);
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <?php
-            if (function_exists('the_custom_logo')) {
-                the_custom_logo();
-            }
-            ?>
-        </a>
+        
+    <?php get_template_part('template-parts/header/site', 'brand'); ?>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

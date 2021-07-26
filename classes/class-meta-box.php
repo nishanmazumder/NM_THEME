@@ -24,8 +24,10 @@ class META_BOX
     {
         //Actions
         add_action('add_meta_boxes', [$this, 'hide_page_meta_box']);
+        add_action('save_post', [$this, 'hide_page_meta_box_save']);
     }
 
+    // Register Meta Box
     public function hide_page_meta_box()
     {
         $screens = ['page'];
@@ -43,6 +45,7 @@ class META_BOX
         }
     }
 
+    // Displaying metabox
     public function hide_page_meta_box_html($post)
     {
         $value = get_post_meta($post->ID, '_hide_page_meta_key', true);
@@ -55,4 +58,19 @@ class META_BOX
         </select>
 <?php
     }
+
+    // Save metabox data
+    public function hide_page_meta_box_save($post_id){
+        if ( array_key_exists( 'nm_field', $_POST ) ) {
+            update_post_meta(
+                $post_id,
+                '_hide_page_meta_key',
+                $_POST['nm_field']
+            );
+        }
+    }
+
+    
+
+    //END
 }
