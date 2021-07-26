@@ -14,7 +14,7 @@
 				<?php 
                 
                 if(has_post_thumbnail()){
-                    the_post_thumbnail('site-logo', array('class' => 'nm-img-full'));
+                    the_post_thumbnail('nm_post_list', ['class' => 'nm-img-full', 'title' => 'Blog Image', 'loading'=>false]);
                 }
                 
                 ?>

@@ -17,6 +17,7 @@ class NM_THEME
     {
         Assets::get_instance();
         Menus::get_instance();
+        META_BOX::get_instance();
         $this->setup_hooks();
     }
 
@@ -38,6 +39,7 @@ class NM_THEME
 
         //Image Size
         add_image_size('site-logo', 220, 180);
+        //add_image_size('nm_post_list', '100%', 'auto');
 
         //Custom Background
         add_theme_support('custom-background', [
