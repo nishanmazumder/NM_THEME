@@ -49,6 +49,10 @@ class META_BOX
     public function hide_page_meta_box_html($post)
     {
         $value = get_post_meta($post->ID, '_hide_page_meta_key', true);
+
+        // Create a noncce field for varification this request
+        wp_nonce_field(plugin_basename(__FILE__), 'hide_page_meta_nonce')
+
 ?>
         <label for="nm_field"><?php esc_html_e('Hide page title') ?></label>
         <select name="nm_field" id="nm_field" class="postbox">
@@ -60,8 +64,24 @@ class META_BOX
     }
 
     // Save metabox data
-    public function hide_page_meta_box_save($post_id){
-        if ( array_key_exists( 'nm_field', $_POST ) ) {
+    public function hide_page_meta_box_save($post_id)
+    {
+
+        /** 
+         *nonce field verification
+         */
+        if (!current_user_can('edit_post', $post_id)) {
+            return;
+        }
+
+        if (
+            !isset($_POST['hide_page_meta_nonce']) ||
+            wp_verify_nonce($_POST['hide_page_meta_nonce'], plugin_basename(__FILE__))
+        ) {
+            return;
+        }
+
+        if (array_key_exists('nm_field', $_POST)) {
             update_post_meta(
                 $post_id,
                 '_hide_page_meta_key',
@@ -70,7 +90,7 @@ class META_BOX
         }
     }
 
-    
+
 
     //END
 }

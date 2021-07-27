@@ -27,6 +27,9 @@ function nm_theme_get_instance(){
    \NM_THEME\Inc\Classes\NM_THEME::get_instance();
 }
 
+//Template Functions
+require_once NM_DIR_PATH.'/inc/template-functions.php';
+
 //Template Tags
 require_once NM_DIR_PATH.'/inc/template-tags.php';
 

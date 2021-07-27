@@ -20,9 +20,14 @@
                 ?>
 			</div>
 			<div class="nm-news-content">
-				<a class="nm-news-title" href="<?php esc_url(the_permalink()) ?>"><?php the_title(); ?></a>
-                <?php the_excerpt(); ?>
-				<span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<?php the_time('j-F-Y g:i a'); ?></span>
+				<a class="nm-news-title" href="<?php esc_url(the_permalink()) ?>">
+				<h3><?php wp_kses_post( the_title() ); ?></h3>
+			</a>
+				<?php posted_by(); ?> <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<?php esc_html(the_time('j-F-Y g:i a')); ?></span>
+				<br>
+				<?php get_template_part('template-parts/post/post', 'content'); ?>
+				<br>
+				
 			</div>
 		</div>
 	</article>
