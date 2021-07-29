@@ -6,8 +6,18 @@
  * @package NM_THEME
  */
 
+// Post title
+function nm_post_title()
+{
+    if (!is_single()) {
+        wp_kses_post(the_title('<h3>', '</h3>', true));
+    } else {
+        wp_kses_post(the_title('<h1>', '</h1>', true));
+    }
+}
+
 // Author Link
-function posted_by()
+function nm_posted_by()
 {
 
     $autor_link = sprintf(
@@ -48,7 +58,6 @@ function nm_theme_read_more()
 }
 
 //Copyright
-
 function nm_copyright_text($text, $link, $linktext)
 {
     $copyright = sprintf(

@@ -13,7 +13,7 @@
     <?php if (have_posts()) : ?>
         <div class="row">
             <?php while (have_posts()) : the_post(); ?>
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12 mt-5">
                     <?php get_template_part('template-parts/content/content'); ?>
                 </div>
             <?php endwhile;

@@ -22,5 +22,4 @@ if (is_single()) {
     );
 } else {
     post_excerpt_limit(100);
-    nm_theme_read_more();
 }

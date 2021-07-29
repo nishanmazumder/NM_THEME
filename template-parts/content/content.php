@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Post content - Displaying post
+ * Post content - Displaying post list - index.php
  * 
  * @package NM_THEME
  */
@@ -11,28 +11,32 @@
 <article id="nm-post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="row">
+
+		<!-- Post Image -->
 		<div class="col-md-12">
 			<?php if (has_post_thumbnail()) {
 				the_post_thumbnail('nm_post_list', ['class' => 'nm-img-full', 'title' => 'Blog Image', 'loading' => false]);
 			} ?>
 		</div>
 
-		<div class="col-md-12">
-			<a class="nm-news-title" href="<?php esc_url(the_permalink()) ?>">
-				<?php esc_html("Post Link") ?>
-			</a>
+		<!-- Post Title -->
+		<div class="col-md-12 mt-2">
+			<?php nm_post_title(); ?>
 		</div>
 
+		<!-- Post Meta -->
 		<div class="col-md-12">
-			<h3><?php wp_kses_post(the_title()); ?></h3>
+			<?php get_template_part('template-parts/post/post-meta'); ?>
 		</div>
 
+		<!-- Post Content -->
 		<div class="col-md-12">
-			<?php posted_by(); ?> <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<?php esc_html(the_time('j-F-Y g:i a')); ?></span>
+			<?php get_template_part('template-parts/post/post-content'); ?>
 		</div>
 
-		<div class="col-md-12">
-			<?php get_template_part('template-parts/post/post', 'content'); ?>
+		<!-- Read More -->
+		<div class="col-md-12 mt-4">
+			<?php nm_theme_read_more(); ?>
 		</div>
 	</div>
 </article>
