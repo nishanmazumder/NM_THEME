@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-12">
             <?php
-            if (is_home() && !is_front_page()) : ?>
+            if (is_single()) : ?>
                 <header class="mb-5">
                     <h1 class="screen-reader-text page-title">
                         <?php single_post_title(); ?>
@@ -26,31 +26,11 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <h1>Single</h1>
-            <?php
-
-
-            if (have_posts()) :
-                while (have_posts()) : the_post();
-                    the_title();
-            ?>
-
-                    <a href="<?php the_permalink(); ?>">POST</a>
-
-            <?php
-                    the_content();
-
-                endwhile;
-            else :
-                _e('Sorry, no posts matched your criteria.', 'nm_theme');
-            endif;
-
-
-            ?>
-
-
-        </div>
+        <?php if (have_posts()) : ?>
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <?php get_template_part('template-parts/content/content-single'); ?>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 

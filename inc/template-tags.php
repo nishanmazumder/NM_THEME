@@ -7,20 +7,21 @@
  */
 
 // Author Link
-function posted_by(){
+function posted_by()
+{
 
     $autor_link = sprintf(
         esc_html_x('by %s', 'post author', 'nm_theme'),
-        '<a href="'.esc_url(get_author_posts_url(get_the_author_meta('ID'))).'">'.esc_html(get_the_author()).'</a>'
+        '<a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a>'
     );
 
-    echo "<span>".$autor_link."</span>";
-
+    echo "<span>" . $autor_link . "</span>";
 }
 
 // Post Excerpt
-function post_excerpt_limit($content_count = 0){
-    if(!has_excerpt() ||  0 === $content_count){
+function post_excerpt_limit($content_count = 0)
+{
+    if (!has_excerpt() ||  0 === $content_count) {
         the_excerpt();
         return;
     }
@@ -29,12 +30,13 @@ function post_excerpt_limit($content_count = 0){
     $excerpt = substr($excerpt, 0, $content_count);
     $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
 
-    echo $excerpt. '[...]';
+    echo $excerpt . '[...]';
 }
 
 // Read More
-function nm_theme_read_more(){
-    if(!is_single()){
+function nm_theme_read_more()
+{
+    if (!is_single()) {
         $readmore = sprintf(
             '<a class="btn btn-danger" href="%1$s">%2$s</a>',
             get_the_permalink(),
@@ -43,4 +45,20 @@ function nm_theme_read_more(){
     }
 
     echo $readmore;
+}
+
+//Copyright
+
+function nm_copyright_text($text, $link, $linktext)
+{
+    $copyright = sprintf(
+        __($text . '%s', 'nm_theme'),
+        wp_kses('<a href="' . $link . '">' . $linktext . '</a>', [
+            'a' => [
+                'href' => []
+            ]
+        ])
+    );
+
+    echo $copyright;
 }

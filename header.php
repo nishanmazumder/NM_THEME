@@ -25,7 +25,7 @@
     }
     ?>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <?php get_template_part('template-parts/header/site', 'header'); ?>
         </div>
