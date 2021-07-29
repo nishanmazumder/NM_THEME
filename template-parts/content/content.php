@@ -21,7 +21,11 @@
 
 		<!-- Post Title -->
 		<div class="col-md-12 mt-2">
-			<?php nm_post_title(); ?>
+			<?php
+			if (function_exists('nm_post_title')) {
+				nm_post_title();
+			}
+			?>
 		</div>
 
 		<!-- Post Meta -->

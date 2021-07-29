@@ -42,8 +42,41 @@ function nm_posted_by()
     echo $post_by;
 }
 
-// Post Excerpt
-function post_excerpt_limit($content_count = 0)
+//Content limit
+function nm_content_limit($limit)
+{
+    // Get content & strip all HTML tags
+    $content = wp_strip_all_tags(get_the_content());
+
+    //Data checking
+    if (has_excerpt()) {
+        $content = wp_strip_all_tags(get_the_excerpt());
+    }
+
+    if ($limit === 0) {
+        the_excerpt();
+        return;
+    }
+
+    // Slice content
+    $limit_content = explode(' ', $content);
+    $limit_content = array_slice($limit_content, 0, $limit);
+
+
+    echo implode(' ', $limit_content) . "[...]";
+}
+
+//Post Content Limit 
+function nm_post_content_limit($limit)
+{
+    $post_content = explode(' ', get_the_content());
+    $limit_content = array_slice($post_content, 0, $limit);
+
+    echo implode(' ', $limit_content);
+}
+
+// Post Excerpt Limit
+function nm_post_excerpt_limit($content_count = 0)
 {
     if (!has_excerpt() ||  0 === $content_count) {
         the_excerpt();
@@ -107,6 +140,21 @@ function nm_theme_read_more()
 
     echo $readmore;
 }
+
+//Pagination
+function nm_post_pagination()
+{
+    global $wp_query;
+    $bigInt = 999999999;
+
+    echo paginate_links(array(
+        'base' => str_replace($bigInt, '%#%', esc_url(get_pagenum_link($bigInt))),
+        'format' => '?paged=%#%',
+        'current' => max(1, get_query_var('paged')),
+        'total' => $wp_query->max_num_pages
+    ));
+}
+
 
 //Copyright
 function nm_copyright_text($text, $link, $linktext)

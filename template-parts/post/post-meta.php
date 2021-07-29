@@ -11,7 +11,13 @@
     <tr>
         <!-- Author Data -->
         <td>
-            <span><?php nm_posted_by(); ?></span>
+            <span>
+                <?php
+                if (function_exists('nm_posted_by')) {
+                    nm_posted_by();
+                }
+                ?>
+            </span>
         </td>
 
         <!-- Post Date -->
@@ -21,7 +27,11 @@
 
         <!-- Category & Tags -->
         <td class="nm_term_list">
-            <?php nm_get_term(); ?>
+            <?php
+            if (function_exists('nm_get_term')) {
+                nm_get_term();
+            }
+            ?>
         </td>
     </tr>
 </table>

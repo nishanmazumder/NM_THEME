@@ -21,5 +21,7 @@ if (is_single()) {
         )
     );
 } else {
-    post_excerpt_limit(100);
+    if (function_exists('nm_content_limit')) {
+        nm_content_limit(25);
+    }
 }
