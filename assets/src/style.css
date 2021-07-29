@@ -12,3 +12,8 @@ img{
     width: 150px;
     height: 100%;
 }
+
+.nm_term_list a{
+    display: inline-block;
+    margin-left: 5px;
+}

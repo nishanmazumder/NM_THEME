@@ -19,16 +19,9 @@
             <span><i class="fa fa-clock-o" aria-hidden="true"></i><?php esc_html(the_time('j-F-Y g:i a')); ?></span>
         </td>
 
-        <!-- Category -->
-        <td>
-            Category
-        </td>
-
-        <!-- Post Link -->
-        <td>
-            <a class="nm-news-title" href="<?php esc_url(the_permalink()) ?>">
-                <?php echo esc_html("Link") ?>
-            </a>
+        <!-- Category & Tags -->
+        <td class="nm_term_list">
+            <?php nm_get_term(); ?>
         </td>
     </tr>
 </table>
