@@ -144,15 +144,33 @@ function nm_theme_read_more()
 //Pagination
 function nm_post_pagination()
 {
-    global $wp_query;
-    $bigInt = 999999999;
+    $allowed_tags = [
+        'span' => [
+            'class' => []
+        ],
+        'a' => [
+            'href' => [],
+            'class' => []
+        ]
+    ];
 
-    echo paginate_links(array(
-        'base' => str_replace($bigInt, '%#%', esc_url(get_pagenum_link($bigInt))),
-        'format' => '?paged=%#%',
-        'current' => max(1, get_query_var('paged')),
-        'total' => $wp_query->max_num_pages
-    ));
+    $arg = [
+        'before_page_number' => '<span class="btn border boreder-secondary mr-2 mb-2">',
+        'after_page_number' => '</span>'
+    ];
+    
+    printf('<nav class="clearfix">%s</nav>', wp_kses(paginate_links($arg), $allowed_tags));
+}
+
+//Pagination Single
+function nm_post_pagination_single()
+{
+    $pagination = '<div class="d-block text-center">'
+        . get_previous_post_link("&#8701 %link") . '||'
+        . get_next_post_link("%link &#8702")
+        . '<div>';
+
+    echo $pagination;
 }
 
 
