@@ -9,9 +9,7 @@
 
 
 <article id="nm-post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<div class="row">
-
+	<div class="row no-gutters">
 		<!-- Post Title -->
 		<div class="col-md-12 mt-2">
 			<?php
@@ -37,5 +35,12 @@
 		<div class="col-md-12">
 			<?php get_template_part('template-parts/post/post-content'); ?>
 		</div>
+
+		<!-- Pagination Single -->
+		<div class="col-md-12">
+			<?php nm_post_pagination_single(); ?>
+		</div>
+
+
 	</div>
 </article>

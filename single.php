@@ -9,24 +9,28 @@
 
 <?php get_header(); ?>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <?php
-        if (have_posts()) :
-            while (have_posts()) : the_post(); ?>
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <?php get_template_part('template-parts/content/content-single'); ?>
-                </div>
-        <?php endwhile;
-        else :
-            get_template_part('template-parts/content/content-none');
-        endif; ?>
-
-        <div class="col-md-12">
-            <?php nm_post_pagination_single(); ?>
+        
+        <!-- Post -->
+        <div class="col-md-8">
+            <?php
+            if (have_posts()) :
+                while (have_posts()) : the_post();
+                    get_template_part('template-parts/content/content-single');
+                endwhile;
+            else :
+                get_template_part('template-parts/content/content-none');
+            endif;
+            ?>
         </div>
+
+        <!-- Sidebar -->
+        <div class="col-md-4">
+            <?php get_sidebar(); ?>
+        </div>
+
     </div>
-</div>
 </div>
 
 <?php get_footer(); ?>

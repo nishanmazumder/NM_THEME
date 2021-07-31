@@ -56,3 +56,35 @@
 //     }
 // }
 // add_action('init', 'nm_jquery_in_footer');
+
+
+
+// function pagina(){
+//     $data = ["A", 2, "B", 4, "C", 6];
+
+// $pagi = 0;
+
+// for($i=$pagi; $i<count($data); $i++){
+
+   
+
+//     print_r($data[$i]);
+//     echo "<br>";
+
+
+
+//     $pagi++;
+   
+
+// }
+
+// echo "<pre>";
+// print_r("");
+// wp_die();
+
+// }
+
+
+
+
+?>

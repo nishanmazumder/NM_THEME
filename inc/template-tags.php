@@ -165,7 +165,7 @@ function nm_post_pagination()
 //Pagination Single
 function nm_post_pagination_single()
 {
-    $pagination = '<div class="d-block text-center">'
+    $pagination = '<div class="nm_pagination">'
         . get_previous_post_link("&#8701 %link") . '||'
         . get_next_post_link("%link &#8702")
         . '<div>';

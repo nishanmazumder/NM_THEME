@@ -24,7 +24,6 @@
 
         <!-- Pagination -->
         <div class="col-md-12 text-center">
-            <h1>pagi</h1>
             <nav aria-label="Post navigation">
                 <ul class="pagination">
                     <li>
