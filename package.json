@@ -1,0 +1,22 @@
+{
+  "name": "NM_THEME",
+  "version": "1.0.0",
+  "description": "<h1>Advance theme functionality<h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishanmazumder/NM_THEME.git"
+  },
+  "keywords": ["wordpress", "theme", "theme engine"],
+  "author": "Nishan M",
+  "license": "MIT",
+  "private": true,
+  "browserlist": ["defaults"],
+  "bugs": {
+    "url": "https://github.com/nishanmazumder/NM_THEME/issues"
+  },
+  "homepage": "https://github.com/nishanmazumder/NM_THEME#readme"
+}
