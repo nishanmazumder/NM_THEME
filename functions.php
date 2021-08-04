@@ -34,7 +34,7 @@ require_once NM_DIR_PATH.'/inc/template-functions.php';
 require_once NM_DIR_PATH.'/inc/template-tags.php';
 
 //Tester
-require_once NM_DIR_PATH. '/inc/helpers/tester.php';
+require_once NM_DIR_PATH. '/inc/helpers/info&tester.php';
 
 
 

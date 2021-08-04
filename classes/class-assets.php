@@ -34,7 +34,7 @@ class Assets
         wp_enqueue_style('bootstrap-css', NM_DIR_URI . '/assets/src/lib/css/bootstrap.min.css');
         wp_enqueue_style('stylesheet', NM_STYLE_URI, [], filemtime(NM_DIR_PATH . '/style.css'), 'all');
 
-        wp_enqueue_style('main-css', NM_DIR_URI . '/assets/src/style.css', [], filemtime(NM_DIR_PATH. '/assets/src/style.css'), 'all');
+        wp_enqueue_style('main-css', NM_DIR_URI . '/assets/src/css/style.css', [], filemtime(NM_DIR_PATH. '/assets/src/css/style.css'), 'all');
 
         // wp_register_style('is_archive', get_template_directory_uri() . '/archive.css', [], filemtime(get_template_directory('/archive.css')), 'all');
 
@@ -46,6 +46,6 @@ class Assets
     public function register_scripts()
     {
         wp_enqueue_script('bootstrap-js', NM_DIR_URI . '/assets/src/lib/js/bootstrap.min.js', array('jquery'), 'v5.0.1', true); //footer
-        wp_enqueue_script('main-js', NM_DIR_URI . '/assets/src/main.js', array('jquery'), filemtime(NM_DIR_PATH . '/assets/src/main.js'), true); //footer
+        wp_enqueue_script('main-js', NM_DIR_URI . '/assets/src/js/main.js', array('jquery'), filemtime(NM_DIR_PATH . '/assets/src/js/main.js'), true); //footer
     }
 }
