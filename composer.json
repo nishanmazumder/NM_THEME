@@ -1,5 +1,16 @@
 {
-    "autoload" : {
-        "classmap": ["classes/", "inc/"]
+    "name": "wcs/nm_theme",
+    "description": "WP theme engine",
+    "type": "wordpress",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nishanmazumder",
+            "email": "arosh019@gmail.com"
+        }
+    ],
+     "autoload" : {
+            "classmap": ["classes/", "inc/"]
     }
+    
 }

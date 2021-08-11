@@ -19,22 +19,25 @@ if (!defined('NM_STYLE_URI')) {
 }
 
 //Autoload
-require_once NM_DIR_PATH. '/vendor/autoload.php';
+require_once NM_DIR_PATH . '/vendor/autoload.php';
 
 //Theme Bootstrap
 nm_theme_get_instance();
-function nm_theme_get_instance(){
+function nm_theme_get_instance()
+{
    \NM_THEME\Inc\Classes\NM_THEME::get_instance();
 }
 
 //Template Functions
-require_once NM_DIR_PATH.'/inc/template-functions.php';
+require_once NM_DIR_PATH . '/inc/template-functions.php';
 
 //Template Tags
-require_once NM_DIR_PATH.'/inc/template-tags.php';
+require_once NM_DIR_PATH . '/inc/template-tags.php';
+
+//Template Hooks
+require_once NM_DIR_PATH . '/inc/hooks.php';
 
 //Tester
-require_once NM_DIR_PATH. '/inc/helpers/info&tester.php';
-
+require_once NM_DIR_PATH . '/inc/helpers/info&tester.php';
 
 
