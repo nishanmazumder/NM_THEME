@@ -6,16 +6,8 @@
  * @package NM_THEME
  */
 
- if(!function_exists('nm_theme_custom_class')){
-     function nm_theme_custom_class(){
-         do_action('nm_theme_add_class');
-     }
- }
+function title_change($title){
+    return "Change $title with filter";
+}
 
- add_action('nm_theme_add_class', 'nm_theme_add_new_class');
-
- if(!function_exists('nm_theme_add_new_class')){
-     function nm_theme_add_new_class(){
-         return "My Name Nishan";
-     }
- }
+//add_filter('the_title', 'title_change', 10, 1);

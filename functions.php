@@ -37,6 +37,9 @@ require_once NM_DIR_PATH . '/inc/template-tags.php';
 //Template Hooks
 require_once NM_DIR_PATH . '/inc/hooks.php';
 
+//Template Hooks
+require_once NM_DIR_PATH . '/inc/shortcode.php';
+
 //Tester
 require_once NM_DIR_PATH . '/inc/helpers/info&tester.php';
 
