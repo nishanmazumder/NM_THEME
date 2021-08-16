@@ -24,9 +24,6 @@ class Sidebar
     {
         //Actions
         add_action( 'widgets_init', [$this, 'register_sidbars'] );
-
-        // Register new widget - Name Submission
-        add_action( 'widgets_init', [$this, 'nm_name_widget'] );
     }
 
     public function register_sidbars(){
@@ -54,11 +51,5 @@ class Sidebar
             )
         );
     }
-
-
-    public function nm_name_widget(){
-        register_widget( 'NM_THEME\Classes\SimpleText' );
-    }
-
-    
+   
 }

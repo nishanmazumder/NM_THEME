@@ -22,16 +22,23 @@ class Widget
 
     protected function setup_hooks()
     {
-        //Actions
-        add_action('init', [$this, 'nm_simpletext_register']); //Elementor
+        // Register Simpletext
+        add_action('widgets_init', [$this, 'simpletext_register']);
+
+        //Register Simpletext - Elementor
+        add_action('init', [$this, 'el_simpletext_register']);
     }
 
-    public function nm_simpletext_register(){
-        require_once __DIR__. '/widgets/class-el-simpleTextphp';
+    public function simpletext_register()
+    {
+        register_widget('NM_THEME\Classes\SimpleText');
+    }
+
+    public function el_simpletext_register()
+    {
+        require_once __DIR__ . '/widgets/class-el-simpleText.php';
 
         \Elementor\Plugin::instance()->widgets_manager
-        ->register_widget_type(new \NM_THEME\Classes\Widget\NM_THEME_POST_WIDGET);
+            ->register_widget_type(new \NM_THEME\Classes\Widget\NM_SIMPLETEXT_WIDGET);
     }
-
-    
 }
