@@ -13,18 +13,6 @@
         <div class="col-md-12 text-center">
             <p> <?php nm_copyright_text("'All right reserver @copyright by ", "https://www.bdsoftcreation.com/", "BDSOFTcr"); ?> </p>
         </div>
-        <div class="col-md-12">
-            <?php 
-            
-            // if(function_exists('nm_theme_custom_class')){
-            //     echo nm_theme_custom_class();
-            // }
-
-            do_shortcode('[nm_title_des title="Test"]');
-            
-            
-            ?>
-        </div>
     </div>
 </div>
 

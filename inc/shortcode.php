@@ -12,13 +12,12 @@
 // }
 
 add_shortcode('nm_title_des', 'add_title_des_shortcode');
-function add_title_des_shortcode($atts){
+function add_title_des_shortcode($atts)
+{
 
     $atts = shortcode_atts([
-        $atts['title'] => "Default Title",
+        'title' => "Default Title",
     ], $atts, 'nm_title_des');
-    
-    echo sprintf("<h2>%s</h2>", $atts['title']);
 
-    
+    echo sprintf("%s", $atts['title']);
 }
