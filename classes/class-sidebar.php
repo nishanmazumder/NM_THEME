@@ -6,9 +6,9 @@
  * @package NM_THEME
  */
 
-namespace NM_THEME\Inc\Classes;
+namespace NM_THEME\Classes;
 
-use NM_THEME\Inc\Traits\Singleton;
+use NM_THEME\Traits\Singleton;
 
 class Sidebar
 {
@@ -57,7 +57,7 @@ class Sidebar
 
 
     public function nm_name_widget(){
-        register_widget( 'NM_THEME\Inc\Classes\Clock_Widget' );
+        register_widget( 'NM_THEME\Classes\SimpleText' );
     }
 
     

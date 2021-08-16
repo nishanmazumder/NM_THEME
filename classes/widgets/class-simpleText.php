@@ -6,7 +6,7 @@
  * @package NM_THEME
  */
 
-namespace NM_THEME\Inc\Classes;
+namespace NM_THEME\Classes;
 
 use WP_Widget;
 
@@ -14,7 +14,7 @@ use WP_Widget;
 /**
  * Adds Foo_Widget widget.
  */
-class Clock_Widget extends WP_Widget
+class SimpleText extends WP_Widget
 {
 
     /**

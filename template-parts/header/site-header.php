@@ -10,7 +10,7 @@
 
 <?php
 
-$menu = NM_THEME\Inc\Classes\Menus::get_instance();
+$menu = NM_THEME\Classes\Menus::get_instance();
 $menu_id = $menu->get_menu_id('nm-theme-main-menu');
 $menu_items = wp_get_nav_menu_items($menu_id);
 

@@ -6,9 +6,9 @@
  * @package NM_THEME
  */
 
-namespace NM_THEME\Inc\Classes;
+namespace NM_THEME\Classes;
 
-use NM_THEME\Inc\Traits\Singleton;
+use NM_THEME\Traits\Singleton;
 
 class META_BOX
 {

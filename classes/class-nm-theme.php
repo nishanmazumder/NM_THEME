@@ -4,9 +4,9 @@
  * Bootstrap NM_THEME
  */
 
-namespace NM_THEME\Inc\Classes;
+namespace NM_THEME\Classes;
 
-use NM_THEME\Inc\Traits\Singleton;
+use NM_THEME\Traits\Singleton;
 
 class NM_THEME
 {
@@ -19,6 +19,8 @@ class NM_THEME
         Sidebar::get_instance();
         Menus::get_instance();
         META_BOX::get_instance();
+        Widget::get_instance();
+
         $this->setup_hooks();
     }
 

@@ -6,7 +6,7 @@
  * @package NM_THEME
  */
 
-namespace NM_THEME\Inc\Classes;
+namespace NM_THEME\Classes\Widget;
 
 use Elementor\Widget_Base as Widget_Base;
 

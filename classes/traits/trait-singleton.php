@@ -1,6 +1,6 @@
 <?php
 
-namespace NM_THEME\Inc\Traits;
+namespace NM_THEME\Traits;
 
 trait Singleton{
     public function __construct(){}
