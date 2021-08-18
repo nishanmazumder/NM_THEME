@@ -17,7 +17,7 @@ class NM_SIMPLETEXT_WIDGET extends Widget_Base
      */
     public function get_name()
     {
-        return "nm_theme_el_post";
+        return "nm_theme_el_simpletext";
     }
 
     /**
@@ -25,7 +25,7 @@ class NM_SIMPLETEXT_WIDGET extends Widget_Base
      */
     public function get_title()
     {
-        return "NM THEME POST";
+        return "NM Simple text";
     }
 
     /**
@@ -33,7 +33,7 @@ class NM_SIMPLETEXT_WIDGET extends Widget_Base
      */
     public function get_icon()
     {
-        return "eicon-post-list";
+        return "eicon-t-letter";
     }
 
     /**

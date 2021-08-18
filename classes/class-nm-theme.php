@@ -20,6 +20,9 @@ class NM_THEME
         Menus::get_instance();
         META_BOX::get_instance();
         Widget::get_instance();
+        Shortcode::get_instance();
+        Hook::get_instance();
+        PostType::get_instance();
 
         $this->setup_hooks();
     }
