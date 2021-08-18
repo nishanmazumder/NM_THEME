@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Widget
+ * Widgets
  * 
  * @package NM_THEME
  */
@@ -22,10 +22,10 @@ class Widget
 
     protected function setup_hooks()
     {
-        // Register Simpletext
-        add_action('widgets_init', [$this, 'simpletext_register']);
+        // Register Custom Widgets
+        add_action('widgets_init', [$this, 'nm_custom_widgets_register']);
 
-        //Register Simpletext - Elementor
+        //Register Elementor Widgets
         add_action('init', [$this, 'nm_elementor_widgets_register']);
     }
 
@@ -48,8 +48,9 @@ class Widget
     }
 
     //Custom text widget
-    public function simpletext_register()
+    public function nm_custom_widgets_register()
     {
+        //Simple Text
         register_widget('NM_THEME\Classes\SimpleText');
     }
 }

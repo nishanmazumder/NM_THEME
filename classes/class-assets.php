@@ -47,5 +47,10 @@ class Assets
     {
         wp_enqueue_script('bootstrap-js', NM_DIR_URI . '/assets/src/lib/js/bootstrap.min.js', array('jquery'), 'v5.0.1', true); //footer
         wp_enqueue_script('main-js', NM_DIR_URI . '/assets/src/js/main.js', array('jquery'), filemtime(NM_DIR_PATH . '/assets/src/js/main.js'), true); //footer
+
+        //Ajax Localize
+        wp_localize_script('main-js', 'ajax_obj', [
+            'ajax_url' => admin_url('admin-ajax.php')
+        ]);
     }
 }

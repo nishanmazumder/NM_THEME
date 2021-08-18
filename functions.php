@@ -27,8 +27,6 @@ require_once NM_DIR_PATH . '/inc/template-functions.php';
 //Template Tags
 require_once NM_DIR_PATH . '/inc/template-tags.php';
 
-//Template Hooks
-require_once NM_DIR_PATH . '/inc/hooks.php';
 
 
 

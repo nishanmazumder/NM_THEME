@@ -91,6 +91,8 @@ class NM_THEME_CF7 extends Widget_Base
             endwhile;
         endif;
 
+        wp_reset_postdata();
+
         return $options;
     }
 
