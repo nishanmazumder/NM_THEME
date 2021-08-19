@@ -72,7 +72,7 @@ function nm_post_content_limit($limit)
     $post_content = explode(' ', get_the_content());
     $limit_content = array_slice($post_content, 0, $limit);
 
-    echo implode(' ', $limit_content);
+    return implode(' ', $limit_content);
 }
 
 // Post Excerpt Limit

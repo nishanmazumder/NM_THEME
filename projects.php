@@ -25,19 +25,21 @@ get_header(); ?>
                 $allowed_tags = [
                     'a' => [
                         'href' => [],
-                        'class' => []
+                        'class' => [],
+                        'data-slug' => []
                     ]
                 ];
 
-                echo wp_kses('<a href="javascript:;" data-slug="all" class="btn btn-primary filter">All Project</a>', $allowed_tags);
+                echo wp_kses('<a href="#" data-slug="all" class="btn btn-danger filter">All Project</a>', $allowed_tags);
                 foreach ($terms as $term) {
-                    echo wp_kses('<a href="javascript:;" data-slug="' . $term->slug . '" class="btn btn-primary filter">' . $term->name . '</a>', $allowed_tags);
+                    echo wp_kses('<a href="#" data-slug="' . $term->slug . '" class="btn btn-primary filter">' . $term->name . '</a>', $allowed_tags);
                 }
             }
 
             ?>
         </div>
-
+    </div>
+    <div class="row" id="nmProjects">
         <?php
 
         $args = [
@@ -50,9 +52,10 @@ get_header(); ?>
         if ($query->have_posts()) :
             while ($query->have_posts()) : $query->the_post(); ?>
                 <div class="col-md-4">
-                    <?php the_post_thumbnail('nm_post_list', ["class" => "nm-img-full", "loading" => true]); ?>
+                    <?php the_post_thumbnail("nm_post_list", ["class" => "nm-img-full", "loading" => true]); ?>
+                    <p class="text-primary"><?php the_terms(get_the_ID(), 'project_type')?></p>
                     <h3><?php the_title(); ?></h3>
-                    <p><?php nm_post_content_limit(30); ?></p>
+                    <p><?php echo nm_post_content_limit(15); ?></p>
                 </div>
         <?php
             endwhile;
