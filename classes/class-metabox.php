@@ -56,7 +56,7 @@ class META_BOX
 ?>
         <label for="nm_field"><?php esc_html_e('Hide page title') ?></label>
         <select name="nm_field" id="nm_field" class="postbox">
-            <option value=""><?php esc_html_e('Selectr an option') ?></option>
+            <option><?php esc_html_e('Selectr an option') ?></option>
             <option value="yes" <?php selected($value, 'yes'); ?>><?php esc_html_e('Yes') ?></option>
             <option value="no" <?php selected($value, 'no'); ?>><?php esc_html_e('No') ?></option>
         </select>

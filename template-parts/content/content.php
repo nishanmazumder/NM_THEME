@@ -7,8 +7,26 @@
  */
 ?>
 
+<?php
 
-<article id="nm-post-<?php the_ID(); ?>" <?php post_class(); ?>>
+// the_meta()
+//get_post_custom(get_the_ID())
+//get_post_meta(get_the_id(), 'bg_color', true)
+//get_post_custom_keys();
+//get_post_custom_values();
+
+//echo "<pre>";
+//print_r(get_post_custom(get_the_ID()));
+
+//the_meta();
+
+
+$nm_blog_color = !empty(get_post_meta(get_the_id(), 'nm_bg_color', true)) ? get_post_meta(get_the_id(), 'nm_bg_color', true) : 'inherit';
+
+
+?>
+
+<article style="background: <?php echo $nm_blog_color; ?>;" id="nm-post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="row">
 

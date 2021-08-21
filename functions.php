@@ -21,16 +21,31 @@ if (!defined('NM_STYLE_URI')) {
 //Autoload
 require_once NM_DIR_PATH . '/vendor/autoload.php';
 
+//Theme Bootstrap
+nm_theme_get_instance();
+function nm_theme_get_instance()
+{
+   \NM_THEME\Classes\NM_THEME::get_instance();
+}
+
 //Template Functions
 require_once NM_DIR_PATH . '/inc/template-functions.php';
 
 //Template Tags
 require_once NM_DIR_PATH . '/inc/template-tags.php';
 
+/**
+ * Load Require plugin by TGM
+ */
+require_once NM_DIR_PATH . '/inc/tgm-activation.php';
+require_once NM_DIR_PATH . '/inc/tgm-config.php';
 
+/**
+ * ACF
+ */
 
-
-
-
-
-
+// Hide the ACF admin menu item.
+add_filter('acf/settings/show_admin', 'my_acf_settings_show_admin');
+function my_acf_settings_show_admin( $show_admin ) {
+    return false;
+}
