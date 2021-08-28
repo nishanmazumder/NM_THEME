@@ -34,6 +34,11 @@ require_once NM_DIR_PATH . '/inc/template-functions.php';
 //Template Tags
 require_once NM_DIR_PATH . '/inc/template-tags.php';
 
+//Woocommerce
+if(class_exists('Woocommerce')){
+   require_once NM_DIR_PATH . '/inc/woocommerce.php';
+}
+
 /**
  * Load Require plugin by TGM
  */
@@ -44,8 +49,13 @@ require_once NM_DIR_PATH . '/inc/tgm-config.php';
  * ACF
  */
 
+// if ( is_plugin_active('advanced-custom-fields') ) {
+//    // do something
+// }
+
 // Hide the ACF admin menu item.
-add_filter('acf/settings/show_admin', 'my_acf_settings_show_admin');
-function my_acf_settings_show_admin( $show_admin ) {
-    return false;
-}
+// add_filter('acf/settings/show_admin', 'my_acf_settings_show_admin');
+// function my_acf_settings_show_admin( $show_admin ) {
+//     return false;
+// }
+

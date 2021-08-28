@@ -23,10 +23,10 @@ class PostType
     protected function setup_hooks()
     {
         //Add Projects
-        add_action( 'init', [$this, 'nm_project_custom_post_type'] );
+        //add_action( 'init', [$this, 'nm_project_custom_post_type'] );
 
         //Add Projects - Taxonomy
-        add_action( 'init', [$this, 'nm_project_taxonomy']);
+       // add_action( 'init', [$this, 'nm_project_taxonomy']);
     }
 
     public function nm_project_custom_post_type() {

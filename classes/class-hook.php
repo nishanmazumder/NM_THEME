@@ -57,9 +57,9 @@ class Hook
         $columns = [
             'cb' => $columns['cb'],
             'title' => __('Title', 'nm_theme'),
-            'taxonomy' => __('Taxonomy', 'nm_theme'),
-            'thumbnail' => __('Thumbnail', 'nm_theme'),
-            'shortcode' => __('Shortcode', 'nm_theme'),
+            'project_taxonomy' => __('Taxonomy', 'nm_theme'),
+            'project_thumbnail' => __('Thumbnail', 'nm_theme'),
+            'project_shortcode' => __('Shortcode', 'nm_theme'),
             'author' => __('Author', 'nm_theme')
         ];
 
@@ -69,18 +69,18 @@ class Hook
     public function nm_add_taxonomy_column_functions($columns, $post_id)
     {
         switch ($columns) {
-            case 'taxonomy':
+            case 'project_taxonomy':
                 echo strip_tags(get_the_term_list($post_id, 'project_type'));
                 break;
-            case 'thumbnail':
+            case 'project_thumbnail':
                 echo get_the_post_thumbnail($post_id, [32, 32]);
                 break;
-            case 'shortcode': //On Shorcode Class
+            case 'project_shortcode': //On Shorcode Class
                 echo '[add_project id="'.get_the_ID().'" title="'.get_the_title().'"]';
                 break;
-            default:
-                echo "Nothing found";
-                break;
+            // default:
+            //     echo "Nothing found";
+            //     break;
         }
     }
 }
