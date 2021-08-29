@@ -18,8 +18,8 @@ $menu_items = wp_get_nav_menu_items($menu_id);
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        
-    <?php get_template_part('template-parts/header/site', 'brand'); ?>
+
+        <?php get_template_part('template-parts/header/site', 'brand'); ?>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -74,12 +74,11 @@ $menu_items = wp_get_nav_menu_items($menu_id);
                     }
                     ?>
                 </ul>
+                <!-- Cart -->
+                <a class="btn cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('View your shopping cart'); ?>"><?php echo sprintf(_n('%d item', '%d items', WC()->cart->get_cart_contents_count()), WC()->cart->get_cart_contents_count()); ?> – <?php echo WC()->cart->get_cart_total(); ?></a>
 
             <?php  } ?>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <?php get_search_form(); ?>
         </div>
     </div>
 </nav>
