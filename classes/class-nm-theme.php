@@ -16,6 +16,7 @@ class NM_THEME
     protected function __construct()
     {
         Assets::get_instance();
+        Customizer::get_instance();
         Sidebar::get_instance();
         Menus::get_instance();
         META_BOX::get_instance();
