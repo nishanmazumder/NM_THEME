@@ -7,7 +7,7 @@
  */
 
 //Enable classic editor for wordpress
-//add_filter('use_block_editor_for_post','__return_false');
+add_filter('use_block_editor_for_post','__return_false');
 
 //Get all project from post type - Projects
 add_action('wp_ajax_get_all_projects', 'get_filter_project');
@@ -58,3 +58,5 @@ function get_filter_project()
 
    wp_die();
 }
+
+

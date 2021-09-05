@@ -22,6 +22,11 @@
             endif;
             ?>
         </div>
+        <div class="col-md-12">
+            <h1>Hook & Filter</h1>
+            <h4><?php do_action('nm_theme_hook_test'); ?></h4>
+            <?php echo apply_filters('nm_theme_filter_test', 'Hello2', 'Filter'); ?>
+        </div>
     </div>
 </div>
 

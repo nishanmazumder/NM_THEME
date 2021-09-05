@@ -101,3 +101,23 @@ function woocommerce_header_add_to_cart_fragment($fragments)
    $fragments['a.cart-customlocation'] = ob_get_clean();
    return $fragments;
 }
+
+// New section to Woocommerce settings
+add_filter( 'woocommerce_get_sections_products', 'wcslider_add_section' );
+function wcslider_add_section( $sections ) {
+	
+	$sections['wcslider'] = __( 'WC Slider', 'nm_theme' );
+	return $sections;
+	
+}
+
+//Remove rating 
+
+//remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 5);
+
+// add_action('woocommerce_template_loop_rating', 'nm_rating', 6);
+
+// function nm_rating()
+// {
+//    echo " bal";
+// }
