@@ -1,10 +1,8 @@
 <?php
 /**
- * Proceed to checkout button
+ * My Account page
  *
- * Contains the markup for the proceed to checkout button on the cart.
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/cart/proceed-to-checkout-button.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/my-account.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -14,14 +12,25 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 2.4.0
+ * @version 3.5.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
-?>
+defined( 'ABSPATH' ) || exit;
 
-<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="checkout-button button alt wc-forward">
-	<?php esc_html_e( 'CHECKOUT', 'woocommerce' ); ?>
-</a>
+/**
+ * My Account navigation.
+ *
+ * @since 2.6.0
+ */
+do_action( 'woocommerce_account_navigation' ); ?>
+
+<div class="woocommerce-MyAccount-content">
+	<?php
+		/**
+		 * My Account content.
+		 *
+		 * @since 2.6.0
+		 */
+		do_action( 'woocommerce_account_content' );
+	?>
+</div>
